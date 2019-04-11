@@ -1,0 +1,11 @@
+apply from: "$rootDir/common.gradle"
+
+dependencies {
+    //android support
+    implementation AndroidSupport.appCompat
+    implementation AndroidSupport.design
+    implementation AndroidSupport.constraint
+
+    //testing
+    testImplementation Testing.jUnit
+}
