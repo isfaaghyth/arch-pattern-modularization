@@ -1,3 +1,9 @@
-include ':uicomponent'
+//loader
 include Modules.app
+
+//feature
+include Modules.mainapp
+
+//common
 include Modules.abstraction
+include Modules.uicomponent
