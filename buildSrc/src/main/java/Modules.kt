@@ -4,8 +4,6 @@
  */
 
 object Modules {
-    val app         = ":app"
-    val network     = ":network"
-    val data        = ":data"
-    val graphql     = ":graphql"
+    val app             = ":app"
+    val abstraction     = ":abstraction"
 }

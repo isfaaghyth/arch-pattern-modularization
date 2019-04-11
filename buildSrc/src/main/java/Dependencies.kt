@@ -16,8 +16,7 @@ object Releases {
     val minSdkVersion = 17
 }
 
-object Versions {
-
+object Version {
     const val kotlin            = "1.3.11"
     const val android_support   = "28.0.0"
     const val constraint        = "1.1.3"
@@ -40,51 +39,51 @@ object Versions {
 }
 
 object Dependencies {
-    val kotlin = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.kotlin}"
+    val kotlin = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Version.kotlin}"
 }
 
 object AndroidSupport {
-    val appCompat = "com.android.support:appcompat-v7:${Versions.android_support}"
-    val design = "com.android.support:design:${Versions.android_support}"
-    val constraint = "com.android.support.constraint:constraint-layout:${Versions.constraint}"
+    val appCompat = "com.android.support:appcompat-v7:${Version.android_support}"
+    val design = "com.android.support:design:${Version.android_support}"
+    val constraint = "com.android.support.constraint:constraint-layout:${Version.constraint}"
 }
 
 object Retrofit {
-    val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
-    val gsonConverter = "com.squareup.retrofit2:converter-gson:${Versions.retrofit}"
-    val scalarConverter = "com.squareup.retrofit2:converter-scalars:${Versions.retrofit}"
-    val rxAdapter = "com.squareup.retrofit2:adapter-rxjava2:${Versions.rxretrofit}"
-    val okHttpLogging = "com.squareup.okhttp3:logging-interceptor:${Versions.okhttp_logging}"
+    val retrofit = "com.squareup.retrofit2:retrofit:${Version.retrofit}"
+    val gsonConverter = "com.squareup.retrofit2:converter-gson:${Version.retrofit}"
+    val scalarConverter = "com.squareup.retrofit2:converter-scalars:${Version.retrofit}"
+    val rxAdapter = "com.squareup.retrofit2:adapter-rxjava2:${Version.rxretrofit}"
+    val okHttpLogging = "com.squareup.okhttp3:logging-interceptor:${Version.okhttp_logging}"
 }
 
 object Reactivex {
-    val android = "io.reactivex.rxjava2:rxandroid:${Versions.rxandroid}"
-    val kotlin = "io.reactivex.rxjava2:rxkotlin:${Versions.rxkotlin}"
+    val android = "io.reactivex.rxjava2:rxandroid:${Version.rxandroid}"
+    val kotlin = "io.reactivex.rxjava2:rxkotlin:${Version.rxkotlin}"
 }
 
 object Glide {
-    val glide = "com.github.bumptech.glide:glide:${Versions.glide}"
-    val compiler = "com.github.bumptech.glide:compiler:${Versions.glide}"
+    val glide = "com.github.bumptech.glide:glide:${Version.glide}"
+    val compiler = "com.github.bumptech.glide:compiler:${Version.glide}"
 }
 
 object Dagger {
-    val dagger = "com.google.dagger:dagger:${Versions.dagger}"
-    val android = "com.google.dagger:dagger-android:${Versions.dagger}"
-    val androidSupport = "com.google.dagger:dagger-android-support:${Versions.dagger}"
-    val compiler = "com.google.dagger:dagger-compiler:${Versions.dagger}"
-    val processor = "com.google.dagger:dagger-android-processor:${Versions.dagger}"
+    val dagger = "com.google.dagger:dagger:${Version.dagger}"
+    val android = "com.google.dagger:dagger-android:${Version.dagger}"
+    val androidSupport = "com.google.dagger:dagger-android-support:${Version.dagger}"
+    val compiler = "com.google.dagger:dagger-compiler:${Version.dagger}"
+    val processor = "com.google.dagger:dagger-android-processor:${Version.dagger}"
 }
 
 object Anko {
-    val anko = "org.jetbrains.anko:anko:${Versions.anko}"
-    val common = "org.jetbrains.anko:anko-commons:${Versions.anko}"
+    val anko = "org.jetbrains.anko:anko:${Version.anko}"
+    val common = "org.jetbrains.anko:anko-commons:${Version.anko}"
 }
 
 object Testing {
-    val jUnit = "junit:junit:${Versions.jUnit}"
-    val testRunner = "com.android.support.test:runner:${Versions.testRunner}"
-    val espresso = "com.android.support.test.espresso:espresso-core:${Versions.espresso}"
-    val mockito = "org.mockito:mockito-inline:${Versions.mockito}"
-    val mockKotlin = "com.nhaarman.mockitokotlin2:mockito-kotlin:${Versions.mockKotlin}"
-    val mockKtRunner = "de.jodamob.kotlin:kotlin-runner-junit4:${Versions.mockTestRunner}"
+    val jUnit = "junit:junit:${Version.jUnit}"
+    val testRunner = "com.android.support.test:runner:${Version.testRunner}"
+    val espresso = "com.android.support.test.espresso:espresso-core:${Version.espresso}"
+    val mockito = "org.mockito:mockito-inline:${Version.mockito}"
+    val mockKotlin = "com.nhaarman.mockitokotlin2:mockito-kotlin:${Version.mockKotlin}"
+    val mockKtRunner = "de.jodamob.kotlin:kotlin-runner-junit4:${Version.mockTestRunner}"
 }

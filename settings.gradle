@@ -1,1 +1,2 @@
-include ':app', ':abstraction'
+include Modules.app
+include Modules.abstraction
