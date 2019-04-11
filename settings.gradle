@@ -1,2 +1,3 @@
+include ':uicomponent'
 include Modules.app
 include Modules.abstraction
