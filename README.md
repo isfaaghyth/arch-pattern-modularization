@@ -12,6 +12,7 @@ Tech stack:
 - Retrofit
 - Room
 - Mockito
+- Applink
 
 
 Cheers! 2019
