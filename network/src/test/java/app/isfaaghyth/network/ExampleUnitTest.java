@@ -1,4 +1,4 @@
-package com.tokopedia.network;
+package app.isfaaghyth.network;
 
 import org.junit.Test;
 

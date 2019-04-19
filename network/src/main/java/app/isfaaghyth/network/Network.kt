@@ -1,7 +1,8 @@
-package com.tokopedia.network
+package app.isfaaghyth.network
 
 import com.google.gson.FieldNamingPolicy
 import com.google.gson.GsonBuilder
+import com.isfaaghyth.network.BuildConfig
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
