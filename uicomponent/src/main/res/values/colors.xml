@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/white</color>
+    <color name="colorPrimaryDark">@color/greenPrimary</color>
+    <color name="colorAccent">@color/semiBlack</color>
+
+    <color name="accentOrange">#FFB73E</color>
+    <color name="accentOrangeDark">#FFB236</color>
+
+    <color name="redPrimary">#e74c3c</color>
+
+    <color name="redSoftPrimary">#F95B85</color>
+    <color name="redSoftPrimaryDark">#F71753</color>
+
+    <color name="greyPrimary">#D2D6DF</color>
+    <color name="greyPrimaryDark">#898E9B</color>
+
+    <color name="semiBlack">#34495E</color>
+    <color name="white">#FFFFFF</color>
+
+    <color name="bluePrimary">#005ED8</color>
+    <color name="bluePrimaryPark">#0047BB</color>
+
+    <color name="greenPrimary">#2ECC71</color>
+    <color name="greenPrimaryPark">#27AE60</color>
+
+    <color name="colorBackground">#E9EFF4</color>
+
+    <color name="grey_50">#fafafa</color>
+    <color name="grey_100">#f5f5f5</color>
+    <color name="grey_200">#eeeeee</color>
+    <color name="grey_300">#e0e0e0</color>
+    <color name="grey_400">#bdbdbd</color>
+    <color name="grey_500">#9e9e9e</color>
+    <color name="grey_600">#757575</color>
+    <color name="grey_700">#616161</color>
+    <color name="grey_800">#424242</color>
+    <color name="grey_900">#212121</color>
+</resources>
