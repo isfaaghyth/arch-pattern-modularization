@@ -9,4 +9,5 @@ object Modules {
     val mainapp         = ":feature:mainapp"
     val uicomponent     = ":uicomponent"
     val abstraction     = ":abstraction"
+    val network         = ":network"
 }

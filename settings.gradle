@@ -1,9 +1,7 @@
-//loader
-include Modules.app
-
 //feature
-include Modules.mainapp
+include Modules.app
 
 //common
 include Modules.abstraction
 include Modules.uicomponent
+include Modules.network

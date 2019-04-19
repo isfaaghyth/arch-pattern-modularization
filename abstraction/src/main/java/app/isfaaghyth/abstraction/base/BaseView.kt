@@ -26,5 +26,5 @@ interface BaseView {
      * you could use this when you have any editText actively
      * @return boolean
      */
-    fun hideKeyboard(): Boolean
+    fun hideKeyboard()
 }
