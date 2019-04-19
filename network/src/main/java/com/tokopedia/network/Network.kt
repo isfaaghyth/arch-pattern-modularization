@@ -1,5 +1,12 @@
 package com.tokopedia.network
 
+import com.google.gson.FieldNamingPolicy
+import com.google.gson.GsonBuilder
+import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
+import retrofit2.Retrofit
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
+import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 /**
@@ -26,10 +33,9 @@ inline fun <reified T> services(okHttpClient: OkHttpClient): T {
         .create()
 
     val retrofit = Retrofit.Builder()
-        .baseUrl(BuildConfig.REST_URL)
+        .baseUrl(BuildConfig.GITHUB_URL)
         .client(okHttpClient)
         .addConverterFactory(GsonConverterFactory.create(gson))
-        .addConverterFactory(ScalarsConverterFactory.create())
         .addCallAdapterFactory(RxJava2CallAdapterFactory.create()).build()
 
     return retrofit.create(T::class.java)
