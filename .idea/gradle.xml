@@ -11,6 +11,8 @@
             <option value="$PROJECT_DIR$/abstraction" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/buildSrc" />
+            <option value="$PROJECT_DIR$/feature" />
+            <option value="$PROJECT_DIR$/feature/git_repositories" />
             <option value="$PROJECT_DIR$/network" />
             <option value="$PROJECT_DIR$/uicomponent" />
           </set>
