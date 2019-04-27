@@ -15,15 +15,12 @@ class MainActivity : AppCompatActivity() {
 
         btnViewRepo.setOnClickListener {
             //common feature
-            startActivity(GitRepositoriesActivity.show(
-                this,
-                "isfaaghyth"
-            ))
+            //startActivity(GitRepositoriesActivity.show(this, "isfaaghyth"))
 
             //dynamic features purpose
-            //val uri = Uri.parse("appisfaaghyth://belajarmodular/isfaaghyth")
-            //val intent = Intent(Intent.ACTION_VIEW, uri)
-            //startActivity(intent)
+            val uri = Uri.parse("appisfaaghyth://belajarmodular/isfaaghyth")
+            val intent = Intent(Intent.ACTION_VIEW, uri)
+            startActivity(intent)
         }
     }
 }
