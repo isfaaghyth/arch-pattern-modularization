@@ -2,13 +2,12 @@ package app.isfaaghyth.abstraction.base
 
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
-import java.lang.NullPointerException
 
 /**
  * Created by isfaaghyth on 11/04/19.
  * github: @isfaaghyth
  */
-class BasePresenter<V: BaseView>: BasePresenterIntr<V> {
+open class BasePresenter<V: BaseView>: BasePresenterIntr<V> {
 
     private val compositeDisposable = CompositeDisposable()
     protected lateinit var view: V
