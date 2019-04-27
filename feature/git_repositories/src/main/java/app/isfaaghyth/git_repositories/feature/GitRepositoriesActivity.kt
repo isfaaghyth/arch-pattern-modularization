@@ -16,7 +16,7 @@ import javax.inject.Inject
 class GitRepositoriesActivity: BaseActivity(), GitRepositoriesView {
 
     companion object {
-        const val GITHUB_USERNAME = "github_username"
+        private const val GITHUB_USERNAME = "github_username"
 
         fun show(context: Context, username: String): Intent {
             val intent = Intent(context, GitRepositoriesActivity::class.java)
@@ -26,7 +26,6 @@ class GitRepositoriesActivity: BaseActivity(), GitRepositoriesView {
     }
 
     override fun contentView(): Int = R.layout.activity_git_repositories
-
     @Inject lateinit var presenter: GitRepositoriesPresenter
 
     private fun initInjector() {
@@ -37,13 +36,17 @@ class GitRepositoriesActivity: BaseActivity(), GitRepositoriesView {
     }
 
     override fun initView() {
-        //init
+        //initialize
         initInjector()
         presenter.attachView(this)
 
         //hit APIs
-        val username = intent.getStringExtra(GITHUB_USERNAME)
-        presenter.getRepos(username)
+        val username = intent?.data?.lastPathSegment as String
+        if (username == "isfaaghyth") {
+            presenter.getRepos(username)
+        } else {
+            onMessage("oops! github username not found")
+        }
     }
 
     override fun onDestroy() {

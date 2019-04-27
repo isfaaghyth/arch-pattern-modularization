@@ -1,5 +1,7 @@
 package app.isfaaghyth.git
 
+import android.content.Intent
+import android.net.Uri
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import app.isfaaghyth.git_repositories.feature.GitRepositoriesActivity
@@ -12,9 +14,16 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         btnViewRepo.setOnClickListener {
+            //common feature
             startActivity(GitRepositoriesActivity.show(
                 this,
-                "isfaaghyth"))
+                "isfaaghyth"
+            ))
+
+            //dynamic features purpose
+            //val uri = Uri.parse("appisfaaghyth://belajarmodular/isfaaghyth")
+            //val intent = Intent(Intent.ACTION_VIEW, uri)
+            //startActivity(intent)
         }
     }
 }
