@@ -10,6 +10,10 @@ dependencies {
     implementation AndroidSupport.design
     implementation AndroidSupport.constraint
 
+    //glide
+    implementation Glide.glide
+    kapt Glide.compiler
+
     //testing
     testImplementation Testing.jUnit
 }

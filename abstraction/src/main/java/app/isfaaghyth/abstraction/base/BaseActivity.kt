@@ -23,11 +23,13 @@ abstract class BaseActivity: AppCompatActivity(), BaseView {
     /**
      * (optional, use it if needed)
      */
-    protected var savedInstanceState: Bundle? = Bundle()
+    protected lateinit var savedInstanceState: Bundle
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        this.savedInstanceState = savedInstanceState
+        if (savedInstanceState != null) {
+            this.savedInstanceState = savedInstanceState
+        }
         setContentView(contentView())
         initView()
     }

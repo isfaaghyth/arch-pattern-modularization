@@ -1,5 +1,6 @@
 package app.isfaaghyth.abstraction.base
 
+import android.app.Activity
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
@@ -26,7 +27,7 @@ abstract class BaseFragment: Fragment(), BaseView {
     /**
      * (optional, use it if needed)
      */
-    protected var savedInstanceState: Bundle? = Bundle()
+    protected lateinit var savedInstanceState: Bundle
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(contentView(), container, false)
@@ -34,7 +35,9 @@ abstract class BaseFragment: Fragment(), BaseView {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        this.savedInstanceState = savedInstanceState
+        if (savedInstanceState != null) {
+            this.savedInstanceState = savedInstanceState
+        }
         initView()
     }
 
@@ -47,11 +50,17 @@ abstract class BaseFragment: Fragment(), BaseView {
     }
 
     override fun isNetworkConnect(): Boolean {
-        return NetworkUtils.connection(context!!)
+        return if (context != null) {
+            NetworkUtils.connection(context!!)
+        } else {
+            false
+        }
     }
 
     override fun hideKeyboard() {
-        return KeyboardUtils.hide(activity!!)
+        return (activity as Activity).let {
+            KeyboardUtils.hide(it)
+        }
     }
 
 }
