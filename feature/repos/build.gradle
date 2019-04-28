@@ -6,6 +6,11 @@ dependencies {
     implementation AndroidSupport.design
     implementation AndroidSupport.constraint
 
+    //network
+    implementation Retrofit.retrofit
+    implementation Retrofit.gsonConverter
+    implementation Retrofit.rxAdapter
+
     //modules
     implementation project(Modules.network)
     implementation project(Modules.uicomponent)
