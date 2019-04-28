@@ -7,6 +7,7 @@ import dagger.Component
  * Created by isfaaghyth on 28/04/19.
  * github: @isfaaghyth
  */
+@ReposScope
 @Component(modules = [ReposModule::class])
 interface ReposComponent {
     fun inject(activity: ReposActivity)

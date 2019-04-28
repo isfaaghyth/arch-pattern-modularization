@@ -4,6 +4,8 @@ import android.util.Log
 import app.isfaaghyth.abstraction.base.BaseActivity
 import app.isfaaghyth.repos.R
 import app.isfaaghyth.repos.data.entity.Repo
+import app.isfaaghyth.repos.di.DaggerReposComponent
+import app.isfaaghyth.repos.di.ReposModule
 import javax.inject.Inject
 
 /**
@@ -16,7 +18,10 @@ class ReposActivity: BaseActivity(), ReposView {
     @Inject lateinit var presenter: ReposPresenter
 
     private fun initInjector() {
-
+        DaggerReposComponent.builder()
+            .reposModule(ReposModule())
+            .build()
+            .inject(this)
     }
 
     override fun initView() {

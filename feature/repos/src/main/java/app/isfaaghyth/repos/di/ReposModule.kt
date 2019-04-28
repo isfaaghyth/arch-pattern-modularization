@@ -17,17 +17,22 @@ import javax.inject.Singleton
  */
 @Module class ReposModule {
 
-    @Provides @ReposScope @Singleton
+    @Provides @ReposScope
     fun provideReposService(): ReposServices {
         return services()
     }
 
-    @Provides @ReposScope @Singleton
+    @Provides @ReposScope
+    fun provideRemoteReposityImpl(services: ReposServices): RemoteRepositoryImpl {
+        return RemoteRepositoryImpl(services)
+    }
+
+    @Provides @ReposScope
     fun provideRemoteRepository(remoteRepositoryImpl: RemoteRepositoryImpl): RemoteRepository {
         return remoteRepositoryImpl
     }
 
-    @Provides @ReposScope @Singleton
+    @Provides @ReposScope
     fun provideDataManager(dataManager: AppDataManager): DataManager {
         return dataManager
     }
