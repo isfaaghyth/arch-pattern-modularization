@@ -1,6 +1,7 @@
 //feature
 include Modules.app
 include Modules.gitRepositories
+include Modules.repos
 
 //common
 include Modules.abstraction
