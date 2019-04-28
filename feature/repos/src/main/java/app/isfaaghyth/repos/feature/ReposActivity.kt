@@ -1,5 +1,6 @@
 package app.isfaaghyth.repos.feature
 
+import android.util.Log
 import app.isfaaghyth.abstraction.base.BaseActivity
 import app.isfaaghyth.repos.R
 import app.isfaaghyth.repos.data.entity.Repo
@@ -14,8 +15,13 @@ class ReposActivity: BaseActivity(), ReposView {
     override fun contentView(): Int = R.layout.activity_repos_main
     @Inject lateinit var presenter: ReposPresenter
 
+    private fun initInjector() {
+
+    }
+
     override fun initView() {
         //initialize
+        initInjector()
         presenter.attachView(this)
 
         //hit API
@@ -29,7 +35,9 @@ class ReposActivity: BaseActivity(), ReposView {
     }
 
     override fun resultGithubRepo(result: List<Repo>) {
-
+        for (repo: Repo in result) {
+            Log.d("MyRepo", repo.name)
+        }
     }
 
 }

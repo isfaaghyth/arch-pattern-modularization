@@ -17,17 +17,7 @@ import java.util.concurrent.TimeUnit
 
 const val REQUEST_TIME_OUT = 60L
 
-fun httpClient(): OkHttpClient {
-    val httpLoggingInterceptor = HttpLoggingInterceptor()
-    httpLoggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
-
-    return OkHttpClient.Builder()
-        .connectTimeout(REQUEST_TIME_OUT, TimeUnit.SECONDS)
-        .readTimeout(REQUEST_TIME_OUT, TimeUnit.SECONDS)
-        .addInterceptor(httpLoggingInterceptor).build()
-}
-
-inline fun <reified T> services(okHttpClient: OkHttpClient): T {
+inline fun <reified T> services(): T {
     val gson = GsonBuilder()
         .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
         .setLenient()
@@ -35,7 +25,6 @@ inline fun <reified T> services(okHttpClient: OkHttpClient): T {
 
     val retrofit = Retrofit.Builder()
         .baseUrl(BuildConfig.GITHUB_URL)
-        .client(okHttpClient)
         .addConverterFactory(GsonConverterFactory.create(gson))
         .addCallAdapterFactory(RxJava2CallAdapterFactory.create()).build()
 
