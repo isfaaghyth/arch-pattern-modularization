@@ -5,13 +5,13 @@ Tech stack:
 
 - Kotlin
 - Dagger2
-- Koin
+- Koin `(on going)`
 - RxJava2
 - MVP
-- MVVM
+- MVVM `(on going)`
 - Retrofit
-- Room
-- Mockito
+- Room `(on going)`
+- Mockito `(on going)`
 - Applink
 
 
