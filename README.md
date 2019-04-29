@@ -4,11 +4,11 @@ Implementation of Modularization on Architecture Pattern
 Tech stack:
 
 - Kotlin
-- Dagger2 `(branch:master)`
-- Koin `(branch:koin)`
+- Dagger2
+- Koin
 - RxJava2
-- MVP `(branch:master)`
-- MVVM `(branch:mvvm)`
+- MVP
+- MVVM
 - Retrofit
 - Room
 - Mockito
