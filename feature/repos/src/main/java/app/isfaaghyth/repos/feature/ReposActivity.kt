@@ -35,6 +35,7 @@ class ReposActivity: BaseActivity(), ReposView {
             presenter.getGithubRepo(username)
         } catch (e: Exception) {
             toast(e.message)
+            finish()
         }
     }
 
