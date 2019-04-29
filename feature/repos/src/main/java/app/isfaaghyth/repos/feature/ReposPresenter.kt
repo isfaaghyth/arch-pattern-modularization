@@ -17,20 +17,25 @@ class ReposPresenter @Inject constructor(
     ): BasePresenter<ReposView>(), ReposPresenterInteractor {
 
     override fun getGithubRepo(username: String) {
-        view.progressLoader(ReposState.Progress)
-        subscribe {
-            dataManager.getGithubRepo(username)
-                .with(schedulerProvider)
-                .subscribeBy(
-                    onSuccess = {
-                        view.resultGithubRepo(it)
-                        view.progressLoader(ReposState.Complete)
-                    },
-                    onError = {
-                        view.onErrorGetGithubRepo()
-                        view.progressLoader(ReposState.Progress)
-                    }
-                )
+        if (view.isNetworkConnect()) {
+            view.progressLoader(ReposState.Progress)
+            subscribe {
+                dataManager.getGithubRepo(username)
+                    .with(schedulerProvider)
+                    .subscribeBy(
+                        onSuccess = {
+                            view.resultGithubRepo(it)
+                            view.progressLoader(ReposState.Complete)
+                        },
+                        onError = {
+                            view.onErrorGetGithubRepo()
+                            view.progressLoader(ReposState.Progress)
+                        }
+                    )
+            }
+        } else {
+            //when network isn't connected,
+            //load data from localRepository
         }
     }
 }
