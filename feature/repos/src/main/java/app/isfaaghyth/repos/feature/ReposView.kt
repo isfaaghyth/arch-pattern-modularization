@@ -9,4 +9,8 @@ import app.isfaaghyth.repos.data.entity.Repo
  */
 interface ReposView: BaseView {
     fun resultGithubRepo(result: List<Repo>)
+    fun onErrorGetGithubRepo()
+
+    //loader
+    fun progressLoader(state: ReposState)
 }

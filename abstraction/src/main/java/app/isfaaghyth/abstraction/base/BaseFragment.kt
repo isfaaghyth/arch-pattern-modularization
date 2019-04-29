@@ -23,6 +23,7 @@ abstract class BaseFragment: Fragment(), BaseView {
      */
     abstract fun contentView(): Int
     abstract fun initView()
+    abstract fun initInjector()
 
     /**
      * (optional, use it if needed)
@@ -38,6 +39,7 @@ abstract class BaseFragment: Fragment(), BaseView {
         if (savedInstanceState != null) {
             this.savedInstanceState = savedInstanceState
         }
+        initInjector()
         initView()
     }
 
@@ -49,6 +51,9 @@ abstract class BaseFragment: Fragment(), BaseView {
         onMessage(getString(stringResId))
     }
 
+    /**
+     * check internet connection
+     */
     override fun isNetworkConnect(): Boolean {
         return if (context != null) {
             NetworkUtils.connection(context!!)
@@ -57,6 +62,9 @@ abstract class BaseFragment: Fragment(), BaseView {
         }
     }
 
+    /**
+     * hide keyboard layout
+     */
     override fun hideKeyboard() {
         return (activity as Activity).let {
             KeyboardUtils.hide(it)

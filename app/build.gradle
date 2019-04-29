@@ -27,7 +27,7 @@ dependencies {
     implementation Dependencies.kotlin
 
     //project
-    implementation project(Modules.gitRepositories)
+    implementation project(Modules.repos)
 
     //android support
     implementation AndroidSupport.appCompat

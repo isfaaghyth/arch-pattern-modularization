@@ -19,6 +19,11 @@ const val REQUEST_TIME_OUT = 60L
 
 inline fun <reified T> services(): T {
     val gson = GsonBuilder()
+        /**
+         * setFieldNamingPolicy()
+         * for convert lowercase with underscores
+         * json:`user_name`, you can use `userName` as variable
+         */
         .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
         .setLenient()
         .create()

@@ -6,6 +6,10 @@ dependencies {
     implementation AndroidSupport.design
     implementation AndroidSupport.constraint
 
+    //Rx
+    implementation Reactivex.android
+    implementation Reactivex.kotlin
+
     //network
     implementation Retrofit.retrofit
     implementation Retrofit.gsonConverter

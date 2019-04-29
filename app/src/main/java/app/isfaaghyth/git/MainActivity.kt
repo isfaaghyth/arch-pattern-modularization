@@ -2,9 +2,8 @@ package app.isfaaghyth.git
 
 import android.content.Intent
 import android.net.Uri
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import app.isfaaghyth.git_repositories.feature.GitRepositoriesActivity
+import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -14,11 +13,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         btnViewRepo.setOnClickListener {
-            //common feature
-            //startActivity(GitRepositoriesActivity.show(this, "isfaaghyth"))
-
-            //dynamic features purpose
-            val uri = Uri.parse("appisfaaghyth://belajarmodular/isfaaghyth")
+            //passing own github username with lastSegment trough applink
+            val uri = Uri.parse("gitjkt://repos/isfaaghyth")
             val intent = Intent(Intent.ACTION_VIEW, uri)
             startActivity(intent)
         }

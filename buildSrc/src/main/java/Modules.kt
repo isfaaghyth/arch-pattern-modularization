@@ -10,6 +10,5 @@ object Modules {
     val abstraction     = ":abstraction"
     val network         = ":network"
 
-    val gitRepositories = ":feature:git_repositories"
     val repos           = ":feature:repos"
 }

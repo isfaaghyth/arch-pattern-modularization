@@ -19,6 +19,7 @@ abstract class BaseActivity: AppCompatActivity(), BaseView {
      */
     abstract fun contentView(): Int
     abstract fun initView()
+    abstract fun initInjector()
 
     /**
      * (optional, use it if needed)
@@ -31,6 +32,7 @@ abstract class BaseActivity: AppCompatActivity(), BaseView {
             this.savedInstanceState = savedInstanceState
         }
         setContentView(contentView())
+        initInjector()
         initView()
     }
 
@@ -42,10 +44,16 @@ abstract class BaseActivity: AppCompatActivity(), BaseView {
         onMessage(getString(stringResId))
     }
 
+    /**
+     * check internet connection
+     */
     override fun isNetworkConnect(): Boolean {
         return NetworkUtils.connection(this)
     }
 
+    /**
+     * hide keyboard layout
+     */
     override fun hideKeyboard() {
         return KeyboardUtils.hide(this)
     }
