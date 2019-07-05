@@ -10,5 +10,6 @@ dependencies {
     implementation Retrofit.retrofit
     implementation Retrofit.gsonConverter
     implementation Retrofit.rxAdapter
+    implementation Retrofit.coroutinesAdapter
     implementation Retrofit.okHttpLogging
 }

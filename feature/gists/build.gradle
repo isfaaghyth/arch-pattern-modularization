@@ -6,6 +6,10 @@ dependencies {
     implementation AndroidSupport.design
     implementation AndroidSupport.constraint
 
+    //coroutines
+    implementation Coroutines.core
+    implementation Coroutines.android
+
     //modules
     implementation project(Modules.network)
     implementation project(Modules.uicomponent)

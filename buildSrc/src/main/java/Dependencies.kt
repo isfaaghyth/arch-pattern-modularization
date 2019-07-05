@@ -28,6 +28,8 @@ object Version {
     const val rxkotlin          = "2.3.0"
     const val glide             = "4.8.0"
     const val dagger            = "2.21"
+    const val coroutines        = "1.3.0-M2"
+    const val coroutinesAdapter = "0.9.2"
 
     //testing
     const val jUnit             = "4.12"
@@ -54,11 +56,17 @@ object Retrofit {
     val scalarConverter = "com.squareup.retrofit2:converter-scalars:${Version.retrofit}"
     val rxAdapter = "com.squareup.retrofit2:adapter-rxjava2:${Version.rxretrofit}"
     val okHttpLogging = "com.squareup.okhttp3:logging-interceptor:${Version.okhttp_logging}"
+    val coroutinesAdapter = "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:${Version.coroutinesAdapter}"
 }
 
 object Reactivex {
     val android = "io.reactivex.rxjava2:rxandroid:${Version.rxandroid}"
     val kotlin = "io.reactivex.rxjava2:rxkotlin:${Version.rxkotlin}"
+}
+
+object Coroutines {
+    val core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Version.coroutines}"
+    val android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Version.coroutines}"
 }
 
 object Glide {
