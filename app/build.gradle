@@ -28,6 +28,7 @@ dependencies {
 
     //project
     implementation project(Modules.repos)
+    implementation project(Modules.gists)
 
     //android support
     implementation AndroidSupport.appCompat
