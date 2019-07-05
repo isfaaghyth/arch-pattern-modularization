@@ -3,6 +3,7 @@ package app.isfaaghyth.network
 import com.google.gson.FieldNamingPolicy
 import com.google.gson.GsonBuilder
 import com.isfaaghyth.network.BuildConfig
+import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -32,6 +33,25 @@ inline fun <reified T> services(): T {
         .baseUrl(BuildConfig.GITHUB_URL)
         .addConverterFactory(GsonConverterFactory.create(gson))
         .addCallAdapterFactory(RxJava2CallAdapterFactory.create()).build()
+
+    return retrofit.create(T::class.java)
+}
+
+inline fun <reified T> serviceCoroutines(): T {
+    val gson = GsonBuilder()
+        /**
+         * setFieldNamingPolicy()
+         * for convert lowercase with underscores
+         * json:`user_name`, you can use `userName` as variable
+         */
+        .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
+        .setLenient()
+        .create()
+
+    val retrofit = Retrofit.Builder()
+        .baseUrl(BuildConfig.GITHUB_URL)
+        .addConverterFactory(GsonConverterFactory.create(gson))
+        .addCallAdapterFactory(CoroutineCallAdapterFactory()).build()
 
     return retrofit.create(T::class.java)
 }
