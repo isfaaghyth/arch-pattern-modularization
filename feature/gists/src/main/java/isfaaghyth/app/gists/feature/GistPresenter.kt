@@ -6,8 +6,11 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import javax.inject.Inject
 
-class GistPresenter(private val dataManager: DataManager): BasePresenter<GistView>(), GistPresenterInteractor {
+class GistPresenter @Inject constructor(
+        private val dataManager: DataManager
+    ): BasePresenter<GistView>(), GistPresenterInteractor {
 
     override fun onGetGist(username: String) {
         CoroutineScope(Dispatchers.IO).launch {

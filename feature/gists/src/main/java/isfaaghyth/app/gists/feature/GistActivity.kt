@@ -10,6 +10,9 @@ import isfaaghyth.app.gists.data.AppDataManager
 import isfaaghyth.app.gists.data.GistServices
 import isfaaghyth.app.gists.data.entity.Gist
 import isfaaghyth.app.gists.data.remote.GistRepositoryImpl
+import isfaaghyth.app.gists.di.DaggerGistComponent
+import isfaaghyth.app.gists.di.GistModule
+import javax.inject.Inject
 
 class GistActivity: BaseActivity(), GistView {
 
@@ -25,15 +28,16 @@ class GistActivity: BaseActivity(), GistView {
 
     override fun contentView(): Int = R.layout.activity_gist
 
-    override fun initInjector() {}
+    override fun initInjector() {
+        DaggerGistComponent.builder()
+            .gistModule(GistModule())
+            .build()
+            .inject(this)
+    }
 
-    lateinit var presenter: GistPresenterInteractor
+    @Inject lateinit var presenter: GistPresenterInteractor
 
     override fun initView() {
-        val service = serviceCoroutines<GistServices>()
-        val remote = GistRepositoryImpl(service)
-        val dataManager = AppDataManager(remote)
-        presenter = GistPresenter(dataManager)
         presenter.attachView(this)
 
         //example get gist

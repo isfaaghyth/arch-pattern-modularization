@@ -3,8 +3,9 @@ package isfaaghyth.app.gists.data.remote
 import isfaaghyth.app.gists.data.GistServices
 import isfaaghyth.app.gists.data.entity.Gist
 import kotlinx.coroutines.Deferred
+import javax.inject.Inject
 
-class GistRepositoryImpl(private val services: GistServices): GistRepository {
+class GistRepositoryImpl @Inject constructor(private val services: GistServices): GistRepository {
 
     override fun getGithubGist(username: String): Deferred<List<Gist>>
     = services.getGithubGist(username)
