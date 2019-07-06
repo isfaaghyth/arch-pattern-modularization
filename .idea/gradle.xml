@@ -12,6 +12,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/buildSrc" />
             <option value="$PROJECT_DIR$/feature" />
+            <option value="$PROJECT_DIR$/feature/gists" />
             <option value="$PROJECT_DIR$/feature/repos" />
             <option value="$PROJECT_DIR$/network" />
             <option value="$PROJECT_DIR$/uicomponent" />

@@ -11,4 +11,5 @@ object Modules {
     val network         = ":network"
 
     val repos           = ":feature:repos"
+    val gists           = ":feature:gists"
 }

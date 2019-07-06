@@ -1,0 +1,26 @@
+apply from: "$rootDir/common.gradle"
+
+dependencies {
+    //android support
+    implementation AndroidSupport.appCompat
+    implementation AndroidSupport.design
+    implementation AndroidSupport.constraint
+
+    //coroutines
+    implementation Coroutines.core
+    implementation Coroutines.android
+
+    //network
+    implementation Retrofit.retrofit
+    implementation Retrofit.gsonConverter
+
+    //modules
+    implementation project(Modules.network)
+    implementation project(Modules.uicomponent)
+    implementation project(Modules.abstraction)
+
+    //testing
+    testImplementation Testing.mockito
+    testImplementation Testing.mockKotlin
+    testImplementation Testing.mockKtRunner
+}

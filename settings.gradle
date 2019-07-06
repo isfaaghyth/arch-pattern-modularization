@@ -1,6 +1,7 @@
 //feature
 include Modules.app
 include Modules.repos
+include Modules.gists
 
 //common
 include Modules.abstraction
